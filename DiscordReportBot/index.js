@@ -73,8 +73,7 @@ bot.on("message", async message => {
     reportschannel.send(verificationEmbed)
     
     .then(msg => {
-    msg.react('✅')
-    client.on('messageReactionAdd', (reaction, rUser) => {
+    msg.react('✅').then('messagereactionadd', (reaction, rUser) => {
       reaction.message.guild.member(rUser).addRole('570671712929054776');
     });
 })
